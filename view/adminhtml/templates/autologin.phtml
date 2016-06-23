@@ -6,14 +6,16 @@
  */
 ?>
 <?php
-$autologinUsername = '';
-$autologinPassword = '';
+$autologinUsername = 'atwix';
+$autologinPassword = 'Y111111';
 ?>
 
-<h3 id="autologin-message" style="display: none"><?php echo __('Please wait. You will be logged in soon'); ?></h3>
+<?php if (!empty($autologinUsername) && !empty($autologinPassword) && !isset($_COOKIE['noautologin'])) : ?>
+    <h3 id="autologin-message" style="display: none"><?php echo __('Please wait. You will be logged in soon'); ?></h3>
 
-<script>
-    require(["jquery", "Atwix_Autologin/js/autologin"], function ($, autologin) {
-        autologin.adminAutologin('<?php echo $autologinUsername; ?>', '<?php echo $autologinPassword; ?>');
-    });
-</script>
+    <script>
+        require(["jquery", "Atwix_Autologin/js/autologin"], function ($, autologin) {
+            autologin.adminAutologin('<?php echo $autologinUsername; ?>', '<?php echo $autologinPassword; ?>');
+        });
+    </script>
+<?php endif; ?>

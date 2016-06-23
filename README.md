@@ -5,3 +5,6 @@ The simple extension that allows to perform admin log in automatically without a
 - Put the package contents to `app/code/Atwix/Autologin` (you need to create this directory)
 - Open app/code/Atwix/Autologin/view/adminhtml/templates/autologin.phtml and enter correct credentials for `$autologinUsername` and `$autologinPassword` variables
 - Clean the cache
+
+## Mics
+If you want to disable the functionality temporarily, just create a new cookie with name `noautologin`
